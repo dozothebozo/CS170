@@ -56,21 +56,21 @@ int* createEvenRandomInteger() {
 
 /**
    Determines if a given integer is a prime number.
-   @param n the integer to check if it is prime
+   @param num the integer to check if it is prime
    @return true if the integer is prime, and false otherwise
 */
-bool isPrime(int n) {
-    if (n <= 1)
+bool isPrime(int num) {
+    if (num <= 1)
         return false;
 
-    if (n == 2)
+    if (num == 2)
         return true;
 
-    if (n % 2 == 0)
+    if (num % 2 == 0)
         return false;
 
     for (int i = 3; i <= n / 2; i += 2) {
-        if (n % i == 0) {
+        if (num % i == 0) {
             return false;
         }
     }
