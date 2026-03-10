@@ -10,7 +10,7 @@
 // - Explicit cast to avoid implicit conversion
 // - Dynamic memory allocation
 // - Pass-by-pointer with const int* random for function printPrimeSum (EXTRA)
-// - Version control using Git & GitHub: github.com/dozothebozo/CS170/Assignment1/Problem1.cpp (EXTRA)
+// - Version control using Git & GitHub: https://github.com/dozothebozo/CS170/blob/main/Problem1.cpp (EXTRA)
 
 #include <cstdlib>
 #include <ctime>
