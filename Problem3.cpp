@@ -14,7 +14,7 @@
 // - Repair process that visits digits d2 through d(n-1) and shows all solutions found
 // - Pass by reference in validateRange(int& lowerBound, int& upperBound) (EXTRA)
 // - Pass by const reference in getInteger(const string& prompt) (EXTRA)
-// - Version control using Git & GitHub:  (EXTRA)
+// - Version control using Git & GitHub: https://github.com/dozothebozo/CS170/blob/main/Problem3.cpp (EXTRA)
 
 #include <cstdlib>
 #include <ctime>
