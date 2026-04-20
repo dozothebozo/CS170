@@ -58,11 +58,18 @@ int main()
     return 0;
 }
 
+/**
+   Ignores all remaining characters in the current input line.
+*/
 void ignoreLine()
 {
     cin.ignore(IGNORE_SIZE, '\n');
 }
 
+/**
+   Checks the input stream and attempts to recover from stream failure.
+   @return true if the stream required recovery, false otherwise
+*/
 bool recoverStream()
 {
     if (!cin)
@@ -80,6 +87,13 @@ bool recoverStream()
     return false;
 }
 
+/**
+   Prompts the user for an integer value within a given inclusive range.
+   @param prompt the message displayed to the user
+   @param min the minimum valid integer value
+   @param max the maximum valid integer value
+   @return a validated integer in the range [min, max]
+*/
 int getIntegerInRange(const string& prompt, int min, int max)
 {
     while (true)
@@ -107,6 +121,12 @@ int getIntegerInRange(const string& prompt, int min, int max)
     }
 }
 
+/**
+   Calculates and returns the sum of the first count terms in the sequence
+   1 - 1/3 + 1/5 - 1/7 + 1/9 ... using iteration.
+   @param count the number of terms to sum
+   @return the sum of the first count terms in the sequence
+*/
 double sumSequence1(int count)
 {
     double sum = 0.0;
@@ -128,6 +148,12 @@ double sumSequence1(int count)
     return sum;
 }
 
+/**
+   Calculates and returns the sum of the first count terms in the sequence
+   1 + 1/3 + 1/5 + 1/7 + 1/9 ... using recursion.
+   @param count the number of terms to sum
+   @return the sum of the first count terms in the sequence
+*/
 double sumSequence2(int count)
 {
     if (count <= 0)
@@ -138,6 +164,10 @@ double sumSequence2(int count)
     return sumSequence2(count - 1) + 1.0 / static_cast<double>(2 * count - 1);
 }
 
+/**
+   Recursively prints the given number of asterisks.
+   @param starCount the number of asterisks to print
+*/
 void printStars(int starCount)
 {
     if (starCount <= 0)
@@ -149,6 +179,12 @@ void printStars(int starCount)
     printStars(starCount - 1);
 }
 
+/**
+   Plots the values returned by a sequence function for counts in a given range.
+   @param sequenceFunction the function used to calculate each sequence value
+   @param minCount the smallest count value to plot
+   @param maxCount the largest count value to plot
+*/
 void plot(double sequenceFunction(int), int minCount, int maxCount)
 {
     for (int count = minCount; count <= maxCount; count++)
