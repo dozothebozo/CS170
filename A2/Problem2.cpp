@@ -12,6 +12,7 @@
 // - Recursive calculation of the sequence 1 + 1/3 + 1/5 + 1/7 + ...
 // - Input validation for the user-selected minimum and maximum number of terms (EXTRA)
 // - Recursive helper function for printing rows of asterisks (EXTRA)
+// - Prompts to rerun the program if input is 'Y' or 'y' (EXTRA)
 // - Version control using Git & GitHub:
 // https://github.com/dozothebozo/CS170/blob/main/A2/Problem2.cpp (EXTRA)
 
@@ -39,21 +40,38 @@ const double STAR_VALUE = 0.1;
 
 int main()
 {
-    int minCount = getIntegerInRange("Enter the smallest number of terms to plot (" +
-                                         to_string(MIN_TERMS) + "-" + to_string(MAX_TERMS) + "): ",
-                                     MIN_TERMS, MAX_TERMS);
+    char choice;
 
-    int maxCount = getIntegerInRange("Enter the largest number of terms to plot (" +
-                                         to_string(minCount) + "-" + to_string(MAX_TERMS) + "): ",
-                                     minCount, MAX_TERMS);
+    do
+    {
+        int minCount =
+            getIntegerInRange("Enter the smallest number of terms to plot (" +
+                                  to_string(MIN_TERMS) + "-" + to_string(MAX_TERMS) + "): ",
+                              MIN_TERMS, MAX_TERMS);
 
-    cout << "\nEach * represents " << STAR_VALUE << "\n\n";
+        int maxCount =
+            getIntegerInRange("Enter the largest number of terms to plot (" + to_string(minCount) +
+                                  "-" + to_string(MAX_TERMS) + "): ",
+                              minCount, MAX_TERMS);
 
-    cout << "sumSequence1\n";
-    plot(sumSequence1, minCount, maxCount);
+        cout << "\nEach * represents " << STAR_VALUE << "\n\n";
 
-    cout << "\nsumSequence2\n";
-    plot(sumSequence2, minCount, maxCount);
+        cout << "sumSequence1\n";
+        plot(sumSequence1, minCount, maxCount);
+
+        cout << "\nsumSequence2\n";
+        plot(sumSequence2, minCount, maxCount);
+
+        cout << "\n\nWould you like to do it again? (y/n): ";
+        cin >> choice;
+
+        if (recoverStream())
+        {
+            break;
+        }
+
+        ignoreLine();
+    } while (choice == 'y' || choice == 'Y');
 
     return 0;
 }
