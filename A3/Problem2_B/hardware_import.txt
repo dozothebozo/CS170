@@ -1,0 +1,32 @@
+3
+Electric Sander
+7
+57.98
+17
+Hammer
+76
+11.99
+24
+Jig Saw
+21
+11.00
+39
+Lawn Mover
+3
+79.50
+56
+Power Saw
+18
+99.99
+68
+Screw-driver
+106
+6.99
+77
+Sledge Hammer
+11
+21.50
+83
+Wrench
+34
+7.50
